@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Assignments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="header-left">
+        <button id="backBtn" class="back-button">← Back</button>
+        <h1 id="classNameTitle">Class</h1>
+      </div>
+      <button id="addAssignmentBtn">+ Add Assignment</button>
+    </header>
+
+    <div class="filter-bar">
+      <label>Show:
+        <select id="filterSelect">
+          <option value="all">All Assignments</option>
+          <option value="notGraded">Only Not Graded</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="assignmentsContainer" class="assignments-list"></div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="modalTitle">Assignment</h2>
+      <form id="assignmentForm">
+        <input type="text" id="assignmentName" placeholder="Assignment Name" required>
+        <input type="number" id="assignmentTotal" placeholder="Total Points (optional)">
+        <input type="number" id="assignmentEarned" placeholder="Points Earned (optional)">
+        <button type="submit">Save Assignment</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="class.js"></script>
+</body>
+</html>

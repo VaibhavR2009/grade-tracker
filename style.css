@@ -1,0 +1,251 @@
+:root {
+  --primary: #2e86de;
+  --primary-dark: #216ab4;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+  --success: #27ae60;
+  --bg: #f9fbfc;
+  --card-bg: #ffffff;
+  --text: #333;
+  --muted: #888;
+  --radius: 8px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --font: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+#app {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+button {
+  font-family: var(--font);
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.class-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-3px);
+}
+
+.class-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.class-card .grade {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--success);
+}
+
+.class-card button {
+  margin-top: 10px;
+  background-color: var(--danger);
+  width: 100%;
+}
+
+.class-card button:hover {
+  background-color: var(--danger-dark);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  width: 95%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#modalTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#assignmentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+#assignmentForm input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+#assignmentForm button {
+  background-color: var(--primary);
+  align-self: flex-start;
+}
+
+.assignments-list > div {
+  background-color: #f0f3f6;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assignments-list strong {
+  font-weight: 500;
+}
+
+.assignments-list button {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+.assignments-list button:first-of-type {
+  background-color: #2980b9;
+}
+
+.assignments-list button:last-of-type {
+  background-color: var(--danger);
+}
+
+.assignments-list button:first-of-type:hover {
+  background-color: #1f618d;
+}
+
+.assignments-list button:last-of-type:hover {
+  background-color: var(--danger-dark);
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1rem;
+  }
+
+  #assignmentForm input {
+    font-size: 0.9rem;
+  }
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.back-button {
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
